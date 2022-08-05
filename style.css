@@ -1,0 +1,236 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    z-index: 99999;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 75px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    display: flex;
+    list-style-type: none;
+    padding: 10px 15px;
+    font-weight: 400;
+    font-size: 0.8rem;
+    font-family: udemy sans, -apple-system, BlinkMacSystemFont, Roboto, segoe ui, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe;
+}
+
+.navbar div {
+    margin: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.srbox {
+    height: 3.2rem;
+    border: 1px solid #1c1d1f;
+    border-radius: 99999px;
+    text-align: left;
+    padding: 22px;
+    background-color: #f7f9fa;
+    margin: 0 1.2rem;
+}
+
+.sr {
+    display: flex;
+    flex-grow: 1;
+}
+
+.home img {
+    width: 91px;
+}
+
+.lang {
+    width: 18px;
+}
+
+.cart img {
+    margin: 10px;
+    width: 30px;
+}
+
+.sr button img {
+    width: 30px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.navbar div button {
+    background-color: white;
+    border: 0px;
+}
+
+.navbar div button a:hover {
+    cursor: pointer;
+    color: blueviolet;
+}
+
+.login {
+    border: 1px solid black;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    user-select: none;
+    line-height: 22px;
+
+}
+
+.login a {
+    text-decoration: none;
+    color: #1c1d1f;
+    font-weight: 700;
+
+}
+
+.login:hover {
+    background-color: #f7f9fa;
+
+}
+
+.signin {
+    background-color: #1c1d1f;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    user-select: none;
+    line-height: 22px;
+
+}
+
+.signin a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+
+.signin:hover {
+    background-color: black;
+}
+
+.langbtn {
+    border: 1px solid black;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    user-select: none;
+    padding-top: 3px;
+}
+
+.langbtn:hover {
+    background-color: #f7f9fa;
+}
+
+.mininav {
+    display: none;
+    align-items: left;
+    justify-content: left;
+}
+
+.toggle img {
+    width: 40px;
+}
+
+.minihome img {
+    width: 100px;
+}
+
+.mininav button {
+    border: none;
+}
+
+.minihome {
+    flex-grow: 1;
+}
+
+@media only screen and (max-width: 1100px) {
+    div.bsns {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    div.teach {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .navbar {
+        display: none;
+    }
+
+    .mininav {
+        display: flex;
+    }
+}
+
+/* navbar end*/
+.container1 {
+    width: 100%;
+    display: flex;
+}
+
+.poster {
+    position: relative;
+}
+.window {
+    padding: 20px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    background-color: white;
+    width: 350px;
+    height: 150px;
+}
+.imgsmall{
+    display: none;
+}
+@media (max-width: 1500px) {
+    .poster img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: initial;
+    }
+}
+@media (max-width: 900px) {
+    .imgbig {
+        display: none;
+    }
+    .imgsmall{
+        display: flex;
+    }
+    .window{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 370px;
+    }
+    .poster{
+        box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    }
+}
