@@ -378,19 +378,19 @@ button:hover {
 figcaption{
     margin-top: 5px;
 }
-.curcourses{
+.courses{
     margin-top: 30px;
     margin-left: -10px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
 }
-.curcourses li{
+.courses li{
     flex-grow: 1;
     width: 240px;
     max-width: 270px;
 }
-.curcourses li img{
+.courses li img{
     width:100%
 }
 .creator{
@@ -407,8 +407,8 @@ figcaption{
     font-size: small;
     color: #83869C;
 }
-.curcourses li a:hover{
-    opacity: 0.85;
+.course-img:hover{
+    filter: contrast(70%);
     transition: 0.5s;
 
 }
@@ -416,7 +416,7 @@ figcaption{
     .info{
         display: none;
     }
-    h4{
+    .title-type{
         display: none;
     }
     .explore{

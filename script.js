@@ -1,35 +1,66 @@
-let coursesData;
 
-function fetchCourses() {
-  let parent = document.querySelector(".courses-flex-box");
-  fetch("https://ahmedsaif2.github.io/Udemy-Clone/db.json")
-    .then((Response) => Response.json())
-    .then((items) => {
-      console.log(items.courses);
-      coursesData = items.courses;
-      coursesData.forEach((item) => {
-        parent.append(addCourse(item));
-      });
+window.addEventListener("load" , () =>{
+  let coursesData=undefined;
+  fetch("db.json")
+    .then(Response => Response.json())
+    .then(courses => {
+      coursesData = courses;
+      addCourses(coursesData);
     });
+});
+
+
+function addCourse(course){
+  let courses = document.querySelector('.courses');
+  let course_li = document.createElement('li');
+  course_li.classList.add('course-li');
+  course_li.classList.add('li-'+course.id);
+  let html;
+  html=`
+  <a href=${course.link}>
+    <figure>
+      <img class = "course-img" src=${course.image} alt="python photo">
+      <figcaption class = "course-title">
+        ${course.title}
+      </figcaption>
+      <figcaption class='creator'>
+        ${course.author}
+      </figcaption>
+      <figcaption class='rate cnt'>
+          <span class='rate'> ${course.rating}</span>
+          <span class='cnt'> (${course.people})</span>
+      </figcaption>
+      <figcaption class='price'>
+         E£${course.price}
+      </figcaption>
+    </figure> 
+  </a>`;
+  course_li.innerHTML = html;
+  courses.appendChild(course_li);
 }
 
-function addCourse(item) {
-  let course = document.createElement("div");
-  course.classList.add("course");
-  course.classList.add("id-" + item.id);
-  course.innerHTML = `
-    <img src="${item.course_img}" alt="${item.category} Course" />
-    <h2>${item.title}</h2>
-    <span>${item.author}</span>
-    <br />
-    <span class="rating">${item.rating}</span>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-    <span>(${item.ratings_count})</span>
-    <h2>${item.price}</h2>
-    `;
-  return course;
+function addCourses(coursesData){
+  console.log(coursesData);
+  coursesData.forEach(course => {
+      addCourse(course);
+  });
 }
+function search(){
+  var input, filter, ul, li, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.querySelector(".courses");
+  li = ul.querySelectorAll('.course-li');
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].querySelector(".course-title");
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+
