@@ -307,20 +307,16 @@ button:hover {
 }
 
 .course-type {
-    gap: 10px;
+    gap: 20px;
     font-family: udemy sans, sf pro text, -apple-system, BlinkMacSystemFont, Roboto, segoe ui, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
     font-weight: 400;
     line-height: 1.4;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-top: 10px;
-    margin-left: -33px;
-    color: rgb(88, 88, 88);
+    margin-bottom: 10px;
 }
 
-.selected {
-    color: black;
-    font-weight: 500;
-}
+
 
 .container2 ul li {
     font-size: 1.1rem;
@@ -396,10 +392,10 @@ button:hover {
 
 .explore {
     border: 1.5px solid black;
-    width: 130px;
-    height: 40px;
     font-size: 0.9rem;
     font-weight: 700;
+    width: max-content;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -453,6 +449,29 @@ figcaption {
     transition: 0.5s;
 
 }
+.checked {
+    color: #E59819;
+}
+.not-checked {
+    color: #E59819;
+}
+.category{
+    border: none;
+    background-color: white;
+    color: #6A6F73;
+    line-height: 1.2;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: udemy sans,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+
+}
+.category:hover{
+    color: black;
+}
+.selected {
+    color: black;
+}
+
 
 @media only screen and (max-width: 700px) {
     .info {

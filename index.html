@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Online Courses - Learn Anything, On Your Schedule | Udemy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="attachments\Udemy-Emblem.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -74,30 +75,24 @@
         <section class="container2">
             <div class="head-line">A broad selection of courses</div>
             <p class="fnt">Choose from 185,000 online video courses with new additions puplished every month</p>
-            <ul class="course-type fnt">
-                <li class="selected">Python</li>
-                <li>Excel</li>
-                <li>Web Development</li>
-                <li>JavaScript</li>
-                <li>Data Science</li>
-                <li>AWS Certification</li>
-                <li>Drawing</li>
-            </ul>
+            <div class="course-type fnt">
+                <button id="python-btn" class="category selected" onclick="get('Python','python-btn')">Python</button>
+                <button id="excel-btn" class="category" onclick="get('Excel','excel-btn')">Excel</button>
+                <button id="web-btn" class="category" onclick="get('Web Development','web-btn')">Web
+                    Development</button>
+                <button id="javascript-btn" class="category"
+                    onclick="get('JavaScript','javascript-btn')">JavaScript</button>
+                <button id="data-btn" class="category" onclick="get('Data Science','data-btn')">Data Science</button>
+                <button id="AWS-btn" class="category" onclick="get('AWS Certification','AWS-btn')">AWS
+                    Certification</button>
+                <button id="drawing-btn" class="category" onclick="get('Drawing','drawing-btn')">Drawing</button>
+            </div>
             <div class="courses-list">
-                <div class="title-type">Expand your career opportunities with Python</div>
-                <div class="info">
-                    <p>Take one of Udemy’s range of Python courses and learn how to code using this incredibly
-                        useful
-                        language. Its simple syntax and readability makes Python perfect for Flask, Django, data
-                        science,
-                        and machine learning. You’ll learn how to build everything from games to sites to apps.
-                        Choose from
-                        a range of courses that will appeal to both beginners and advanced developers alike.
-                    </p>
+                <div class="category-header">
+                   
                 </div>
-                <a href="#" class="explore"><span>Explore Python</span></a>
                 <ul class="courses">
-                        
+
                 </ul>
             </div>
         </section>
