@@ -3,21 +3,25 @@
     margin: 0;
     box-sizing: border-box;
     list-style: none;
-    
+
 }
-body{
+
+body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
-html{
+
+html {
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
 }
-div{
+
+div {
     display: block;
 }
+
 .navbar {
     z-index: 99999;
     position: relative;
@@ -30,7 +34,7 @@ div{
     padding: 10px 15px;
     font-weight: 400;
     font-size: 0.8rem;
-    font-family: udemy sans,sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-family: udemy sans, sf pro text, -apple-system, BlinkMacSystemFont, Roboto, segoe ui, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
 }
 
 .navbar div {
@@ -54,11 +58,13 @@ div{
     display: flex;
     flex-grow: 1;
 }
-.srbtn{
+
+.srbtn {
     position: absolute;
     left: 244px;
     top: 25px;
 }
+
 .home img {
     width: 91px;
 }
@@ -192,20 +198,22 @@ button:hover {
     .navbar {
         display: none;
     }
+
     .mininav {
         display: flex;
     }
 }
 
 /* navbar end*/
-.main-container{
+.main-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
     justify-content: center;
-    
+
 }
+
 .container1 {
     width: 1500px;
     max-width: 100%;
@@ -213,82 +221,134 @@ button:hover {
     justify-content: center;
     align-items: center;
 }
+
 .poster {
     position: relative;
     width: 100%;
 }
-.poster img{
+
+.poster img {
     position: relative;
     width: 100%;
 }
+
 .window {
-    padding: 35px;
+    padding: 20px 35px;
+    max-width: 100%;
     position: absolute;
     top: 50px;
     left: 50px;
     box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
     background-color: white;
-    width: 450px;
+    width: 490px;
     height: 200px;
     font-size: 1.5rem;
-    
+
 }
-.window p{
-    font-family: udemy sans,sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+
+.window p {
+    font-family: udemy sans, sf pro text, -apple-system, BlinkMacSystemFont, Roboto, segoe ui, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
     font-weight: 400;
     font-size: 1.3rem;
 }
-.imgsmall{
+
+.imgsmall {
     display: none;
 }
-@media only screen and (max-width: 1500px) {
-    .poster img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        object-position: initial;
-    }
-}
+
+
 @media only screen and (max-width: 1100px) {
 
-    .window{
+    .window {
         top: 20px;
     }
 }
+
 @media only screen and (max-width: 900px) {
-    .container1{
+    .container1 {
         width: 370px;
     }
+
     .imgbig {
         display: none;
     }
-    .imgsmall{
+
+    .imgsmall {
         display: flex;
     }
-    .window{
+    .window {
         position: relative;
-        width: 370px;   
+        width: 370px;
         padding: 20px;
         margin: 0;
         top: 0;
         left: 0;
     }
-    .poster{
+
+    .poster {
         box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
     }
 }
-.container2{
+
+.container2 {
+    padding: 20px;
     width: 1500px;
     max-width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    padding-top: 30px;
+    margin-left: 0px;
+    padding-top: 40px;
 }
-.head-line{
-    font-family: SuisseWorks,Georgia,Times,times new roman,serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+
+.head-line {
+    font-family: SuisseWorks, Georgia, Times, times new roman, serif, apple color emoji, segoe ui emoji, segoe ui symbol;
     font-weight: 700;
     font-size: 2rem;
+}
+
+.course-type {
+    gap: 10px;
+    font-family: udemy sans, sf pro text, -apple-system, BlinkMacSystemFont, Roboto, segoe ui, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-left: -33px;
+    color: rgb(88, 88, 88);
+}
+
+.selected {
+    color: black;
+    font-weight: 500;
+}
+
+.container2 ul li {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: udemy sans, sf pro text, -apple-system, BlinkMacSystemFont, Roboto, segoe ui, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
+
+}
+
+.courses {
+    width: 100%;
+    gap: 30px;
+}
+
+.title-type {
+    font-family: Segoe UI;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.courses p {
+    font-weight: 400;
+    font-size: 1.1rem;
+    font-family: udemy sans, sf pro text, -apple-system, BlinkMacSystemFont, Roboto, segoe ui, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
+    margin-top: 10px;
+}
+
+.course-type {
+    display: flex;
 }
 .fnt{
     font-family: udemy sans,sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
@@ -298,45 +358,18 @@ button:hover {
     margin-top: 10px;
     color: rgb(88, 88, 88);
 }
-.selected{
-    color: black;
-    font-weight: 500;
-}
-
-.container2 ul li{
-    margin: 10px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    font-family: udemy sans,sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
-
-}
-.courses{
-   width: 100%;
-}
-.title-type{
-    font-family:Segoe UI;
-    font-weight: 700;
-    font-size: 1.5rem;
-}
-.courses p{
-    font-weight: 400;
-    font-size: 1.1rem;
-    font-family: udemy sans,sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;    margin-top: 10px;
-}
-.course-type{
-    display: flex;
-}
-.info{
+.info {
     width: 880px;
     max-width: 100%;
     height: 110px;
     padding-top: 10px;
 }
-.info p{
-    font-family:Segoe UI;
+
+.info p {
+    font-family: Segoe UI;
     padding-bottom: 2px;
-    display: block!important;
-    display: -webkit-box!important;
+    display: block !important;
+    display: -webkit-box !important;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -344,7 +377,8 @@ button:hover {
     white-space: normal;
     font-size: 1.1rem;
 }
-.courses-list{
+
+.courses-list {
     padding: 30px;
     padding-left: 30px;
     width: 100%;
@@ -352,16 +386,15 @@ button:hover {
     box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 2px 6px rgb(0 0 0 / 8%);
 
 }
-.courses-list h4{
-    font-family: udemy sans,sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
-}
-.courses-list a{
+
+.courses-list a {
     text-decoration: none;
     color: black;
-    font-family: udemy sans,sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-family: udemy sans, sf pro text, -apple-system, BlinkMacSystemFont, Roboto, segoe ui, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
 
 }
-.explore{
+
+.explore {
     border: 1.5px solid black;
     width: 130px;
     height: 40px;
@@ -371,60 +404,72 @@ button:hover {
     justify-content: center;
     align-items: center;
 }
-.explore:hover{
-    background-color:#f7f9fa;
+
+.explore:hover {
+    background-color: #f7f9fa;
 }
 
-figcaption{
+figcaption {
     margin-top: 5px;
 }
-.courses{
+
+.courses {
+    margin-left: -30px;
     margin-top: 30px;
-    margin-left: -10px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
 }
-.courses li{
+
+.courses li {
     flex-grow: 1;
     width: 240px;
     max-width: 270px;
 }
-.courses li img{
-    width:100%
+
+.courses li img {
+    width: 100%
 }
-.creator{
+
+.creator {
     color: #757575;
     font-size: small;
     margin-top: 5px;
 }
-.rate{
+
+.rate {
     font-size: medium;
     font-weight: 500;
     color: #B4690E;
 }
-.cnt{
+
+.cnt {
     font-size: small;
     color: #83869C;
 }
-.course-img:hover{
+
+.course-img:hover {
     filter: contrast(70%);
     transition: 0.5s;
 
 }
+
 @media only screen and (max-width: 700px) {
-    .info{
+    .info {
         display: none;
     }
-    .title-type{
+
+    .title-type {
         display: none;
     }
-    .explore{
+
+    .explore {
         display: none;
     }
-    .courses-list ul{
+
+    .courses-list ul {
         margin-top: 0px;
     }
-    .courses-list{
-    }
+
+    .courses-list {}
 }

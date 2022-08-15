@@ -15,6 +15,8 @@ function addCourse(course){
   let course_li = document.createElement('li');
   course_li.classList.add('course-li');
   course_li.classList.add('li-'+course.id);
+  course_li.classList.add("carousel-inner");
+
   let html;
   html=`
   <a href=${course.link}>
