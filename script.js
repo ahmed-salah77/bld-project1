@@ -1,4 +1,5 @@
 let lastSelectedId = 'python-btn';
+let leftCourse =1,rightCourse=5,num_courses=1;
 let categoryTitle=[];
 categoryTitle['python-btn']="Expand your career opportunities with Python";
 categoryTitle['web-btn']="Build websites and applications with Web Development";
@@ -25,16 +26,18 @@ categoryBtn['AWS-btn']="Explore AWS Certification";
 categoryBtn['drawing-btn']="Explore Drawing";
 window.addEventListener("load" , () =>{
   get("python",lastSelectedId);
+  
 });
 function get(category,id){
   change_info(id);
+  leftCourse =1,rightCourse=5,num_courses=1;
   let current = document.getElementById(id);
   let last = document.getElementById(lastSelectedId);
   last.classList.remove('selected');
   current.classList.add('selected');
   lastSelectedId = id;
   let courses = document.querySelector('.courses');
-  courses.innerHTML='';
+  courses.innerHTML=`<span><button class="prev-btn fa-solid fa-circle-chevron-left fa-2xl border-0" onclick="goBack()"></button></span>`;
   let coursesData=undefined;
   let uri = 'https://www.udemy.com/api-2.0/courses/?search='+category+'&fields[course]=@all&page_size=15';
   let h= new Headers();
@@ -45,13 +48,14 @@ function get(category,id){
     method:'GET',
     headers:h,
   });
-fetch(req) 
+  fetch(req) 
   .then(Response => Response.json())
   .then(courses => {
     coursesData = courses.results;
    // console.log(coursesData);
     addCourses(coursesData);
   });
+ 
 }
 function change_info(id){
   let div = document.querySelector('.category-header');
@@ -71,7 +75,7 @@ function addCourse(course){
   let courses = document.querySelector('.courses');
   let course_li = document.createElement('li');
   course_li.classList.add('course-li');
-  course_li.classList.add('li-'+course.id);
+  course_li.classList.add('li-'+num_courses);
   course_li.classList.add("carousel-inner");
   let stars=``;
   let full = `<span class='fa fa-star' style = 'color:#E59819'></span>`;
@@ -111,13 +115,22 @@ function addCourse(course){
     </figure> 
   </a>`;
   course_li.innerHTML = html;
+  if(num_courses>5){
+    course_li.classList.add('d-none');
+  }
   courses.appendChild(course_li);
+  num_courses++;
 }
 
 function addCourses(coursesData){
   coursesData.forEach(course => {
       addCourse(course);
   });
+  let courses = document.querySelector('.courses');
+  let nextBtn = document.createElement('span');
+  nextBtn.innerHTML = `<button class="next-btn fa-solid fa-circle-chevron-right fa-2xl border-0" onclick="goNext()"></button>`
+  courses.append(nextBtn);
+  rightCourse=Math.min(5,num_courses);
 }
 function search(){
   var input, filter, ul, li, i, txtValue;
@@ -138,3 +151,31 @@ function search(){
 }
 
 
+function goNext(){
+  if(rightCourse+1>num_courses || num_courses<5)
+    return;
+  let nextCourse = document.querySelector('.li-'+(rightCourse+1));
+  nextCourse.classList.remove('d-none');
+  let hiddenCourse = document.querySelector('.li-'+leftCourse);
+  hiddenCourse.classList.add('d-none');
+  rightCourse++;
+  leftCourse++;
+}
+function goBack(){
+  if(leftCourse-1==0 || num_courses<5)
+    return;
+  let prevCourse = document.querySelector('.li-'+(leftCourse-1));
+  prevCourse.classList.remove('d-none');
+  let hiddenCourse = document.querySelector('.li-'+rightCourse);
+  hiddenCourse.classList.add('d-none');
+  rightCourse--;
+  leftCourse--;
+}
+
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    document.body.style.backgroundColor = "yellow";
+  } else {
+    document.body.style.backgroundColor = "pink";
+  }
+}

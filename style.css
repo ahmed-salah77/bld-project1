@@ -375,6 +375,7 @@ button:hover {
 }
 
 .courses-list {
+    position: relative;
     padding: 30px;
     padding-left: 30px;
     width: 100%;
@@ -412,19 +413,20 @@ figcaption {
 .courses {
     margin-left: -30px;
     margin-top: 30px;
-    position: relative;
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    overflow: hidden;
+    height:340px;
 }
 
 .courses li {
     flex-grow: 1;
     width: 240px;
-    max-width: 270px;
 }
 
 .courses li img {
-    width: 100%
+    width: 100%;
+    position: relative;
 }
 
 .creator {
@@ -491,4 +493,23 @@ figcaption {
     }
 
     .courses-list {}
+}
+  
+.next-btn{
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+}
+.next-btn:active{
+    color:#6A6F73;
+}
+.prev-btn{
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+}
+.prev-btn:active{
+    color: #6A6F73;
 }
