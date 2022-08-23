@@ -58,14 +58,14 @@
                     <button><img src="attachments/toggle.png" alt="menu"></button>
                 </div>
                 <ul class="dropdown-menu" style="background-color: red;">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
                 </ul>
             </div>
 
-          
+
             <div class="minihome">
                 <a href="https://www.udemy.com"><img src="attachments\Udemy_logo.png" alt="Udemy Logo"></a>
             </div>
@@ -87,34 +87,79 @@
             <div class="head-line">A broad selection of courses</div>
             <p class="fnt">Choose from 185,000 online video courses with new additions puplished every month</p>
             <div class="course-type fnt">
-                <button id="python-btn" class="category selected" onclick="get('Python','python-btn')">Python</button>
-                <button id="excel-btn" class="category" onclick="get('Excel','excel-btn')">Excel</button>
-                <button id="web-btn" class="category" onclick="get('Web Development','web-btn')">Web
+                <button id="python-btn" class="category selected"
+                    onclick="getCourses('Python','python-btn')">Python</button>
+                <button id="excel-btn" class="category" onclick="getCourses('Excel','excel-btn')">Excel</button>
+                <button id="web-btn" class="category" onclick="getCourses('Web Development','web-btn')">Web
                     Development</button>
                 <button id="javascript-btn" class="category"
                     onclick="get('JavaScript','javascript-btn')">JavaScript</button>
-                <button id="data-btn" class="category" onclick="get('Data Science','data-btn')">Data Science</button>
-                <button id="AWS-btn" class="category" onclick="get('AWS Certification','AWS-btn')">AWS
+                <button id="data-btn" class="category" onclick="getCourses('Data Science','data-btn')">Data
+                    Science</button>
+                <button id="AWS-btn" class="category" onclick="getCourses('AWS Certification','AWS-btn')">AWS
                     Certification</button>
-                <button id="drawing-btn" class="category" onclick="get('Drawing','drawing-btn')">Drawing</button>
+                <button id="drawing-btn" class="category" onclick="getCourses('Drawing','drawing-btn')">Drawing</button>
             </div>
             <div class="courses-list">
                 <div class="category-header">
-                   
+
                 </div>
-                
-                <div id="carouselExampleControls" class="carousel slide course" data-bs-ride="carousel">
+
+                <div id="carouselExampleControls" class="carousel slide course" data-interval="carousel">
                     <div class="carousel-inner" role="listbox"">
                         
                     </div>
-                    <button class="fa-solid fa-circle-chevron-left fa-2xl prev-btn" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="prev">
-                    </button>
-                    <button class="fa-solid fa-circle-chevron-right fa-2xl next-btn type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="next">
-                    </button>
-                </div>
+                    <button class=" fa-solid fa-circle-chevron-left fa-2xl prev-btn" type="button"
+                        data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        </button>
+                        <button class="fa-solid fa-circle-chevron-right fa-2xl next-btn type=" button"
+                            data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        </button>
+                    </div>
 
+                </div>
+        </section>
+        <section class="container3">
+            <h2>Top categories</h2>
+            <div class="row top-categories">
+                <a class="col-sm-6 col-md-4 col-lg-3 ">
+                    <img src="attachments/lohp-category-business-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">Business</h3>
+
+                </a>
+                <a class="col-sm-6 col-md-4 col-lg-3">
+                    <img src="attachments/lohp-category-design-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">Design</h3>
+
+                </a>
+                <a class="col-sm-6 col-md-4 col-lg-3">
+                    <img src="attachments/lohp-category-development-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">Development</h3>
+
+                </a>
+                <a class="col-sm-6 col-md-4 col-lg-3">
+                    <img src="attachments/lohp-category-it-and-software-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">IT and Software</h3>
+
+                </a>
+                <a class="col-sm-6 col-md-4 col-lg-3">
+                    <img src="attachments/lohp-category-marketing-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">Marketing</h3>
+
+                </a>
+                <a class="col-sm-6 col-md-4 col-lg-3">
+                    <img src="attachments/lohp-category-music-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">Music</h3>
+                </a>
+                <a class="col-sm-6 col-md-4 col-lg-3">
+                    <img src="attachments/lohp-category-personal-development-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">Personal Development</h3>
+
+                </a>
+                <a class="col-sm-6 col-md-4 col-lg-3">
+                    <img src="attachments/lohp-category-photography-v2.jpg" alt="lohp-category-business-v2">
+                    <h3 class="category-title">Photography</h3>
+                </a>
             </div>
         </section>
     </div>
@@ -122,7 +167,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/5ae26882f8.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5ae26882f8.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

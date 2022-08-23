@@ -2,7 +2,7 @@ let lastSelectedId = 'python-btn';
 let num_courses=0;
 let block_num = 0;
 let categoryTitle=[];
-let coursesData=[];
+let coursesData=[],coursesCategory=[];
 let numOfCourses = 5;
 categoryTitle['python-btn']="Expand your career opportunities with Python";
 categoryTitle['web-btn']="Build websites and applications with Web Development";
@@ -28,12 +28,10 @@ categoryBtn['data-btn']="Explore Data Science";
 categoryBtn['AWS-btn']="Explore AWS Certification";
 categoryBtn['drawing-btn']="Explore Drawing";
 window.addEventListener("load" , () =>{
-  get("python",lastSelectedId);
-  
+  getCourses("python",lastSelectedId);
 });
-function get(category,id){
+function getCourses(category,id){
   change_info(id);
-  leftCourse =1,rightCourse=5,num_courses=1;
   let current = document.getElementById(id);
   let last = document.getElementById(lastSelectedId);
   last.classList.remove('selected');
@@ -57,6 +55,24 @@ function get(category,id){
   });
  
 }
+function getCategories(){
+  let uri = 'https://www.udemy.com/api-2.0/courses/?fields[course]=@all';
+  let h= new Headers();
+  h.append("Accept","application/json, text/plain, */*");
+  h.append("Authorization","Basic WnR6QXBCZHpaNjE4V3RRc2ZsTzltMTAwa0kxZkxYU3VSN3NFNTB5azpvakRXYjZrOGdPNGZJdGZrTGR0ZTNKM0dZVEI2TTNNcFprN2tTbzgyT016d3QwMnVQbHd0OXVCb0hwd0NWS2RBRG4zRWFQeXl2YlVaOW1EcmxRaGh1dE5XcEF2WkZuYXgzd3I0R3NDVGo3c0hERmtTVUtITDhEWksxS2tZRUNPTw==");
+  h.append("Content-Type", "application/json;charset=utf-8");
+  let req = new Request(uri,{
+    method:'GET',
+    headers:h,
+  });
+  fetch(req) 
+  .then(Response => Response.json())
+  .then(category => {
+    coursesCategory = category;
+    console.log(category);
+  });
+}
+getCategories();
 function change_info(id){
   let div = document.querySelector('.category-header');
   div.innerHTML = '';
@@ -87,7 +103,6 @@ function addCourse(course){
     cont.appendChild(nw_item);
   }
   let courses = document.querySelector('.blk-'+block_num);
-  console.log(numOfCourses);
   let course_li = document.createElement('div');
   course_li.classList.add('course-li');
   course_li.classList.add('li-'+num_courses);
