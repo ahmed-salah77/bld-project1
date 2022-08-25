@@ -410,21 +410,14 @@ figcaption {
     margin-top: 5px;
 }
 
-.courses {
-    margin-left: -30px;
-    margin-top: 30px;
-    display: flex;
-    flex-flow: row wrap;
-    overflow: hidden;
-    height:340px;
-}
 
-.courses li {
+.course-li {
     flex-grow: 1;
-    width: 240px;
+    width: 340px;
+    margin: 10px;
 }
 
-.courses li img {
+.course-img {
     width: 100%;
     position: relative;
 }
@@ -498,18 +491,21 @@ figcaption {
 .next-btn{
     z-index: 100;
     position: absolute;
-    top: 50%;
-    right: 10px;
+    top: 25%;
+    right: -20px;
+    border: none;
+
 }
-.next-btn:active{
+.next-btn:hover{
     color:#6A6F73;
 }
 .prev-btn{
+    border: none;
     z-index: 100;
     position: absolute;
-    top: 50%;
-    left: 10px;
+    top: 25%;
+    left: -20px;
 }
-.prev-btn:active{
+.prev-btn:hover{
     color: #6A6F73;
 }

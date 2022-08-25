@@ -53,9 +53,19 @@
             </div>
         </nav>
         <nav class="mininav navbar">
-            <div class="toggle">
-                <button><img src="attachments/toggle.png" alt="menu"></button>
+            <div class="dropdown  h-100%">
+                <div class="nav-link  toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                    <button><img src="attachments/toggle.png" alt="menu"></button>
+                </div>
+                <ul class="dropdown-menu" style="background-color: red;">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
             </div>
+
+          
             <div class="minihome">
                 <a href="https://www.udemy.com"><img src="attachments\Udemy_logo.png" alt="Udemy Logo"></a>
             </div>
@@ -93,9 +103,18 @@
                    
                 </div>
                 
-                <ul class="courses">
-                    
-                </ul>
+                <div id="carouselExampleControls" class="carousel slide course" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox"">
+                        
+                    </div>
+                    <button class="fa-solid fa-circle-chevron-left fa-2xl prev-btn" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                    </button>
+                    <button class="fa-solid fa-circle-chevron-right fa-2xl next-btn type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                    </button>
+                </div>
+
             </div>
         </section>
     </div>

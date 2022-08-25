@@ -1,6 +1,9 @@
 let lastSelectedId = 'python-btn';
-let leftCourse =1,rightCourse=5,num_courses=1;
+let num_courses=0;
+let block_num = 0;
 let categoryTitle=[];
+let coursesData=[];
+let numOfCourses = 5;
 categoryTitle['python-btn']="Expand your career opportunities with Python";
 categoryTitle['web-btn']="Build websites and applications with Web Development";
 categoryTitle['excel-btn']="Analyze and visualize data with Excel";
@@ -36,9 +39,6 @@ function get(category,id){
   last.classList.remove('selected');
   current.classList.add('selected');
   lastSelectedId = id;
-  let courses = document.querySelector('.courses');
-  courses.innerHTML=`<span><button class="prev-btn fa-solid fa-circle-chevron-left fa-2xl border-0" onclick="goBack()"></button></span>`;
-  let coursesData=undefined;
   let uri = 'https://www.udemy.com/api-2.0/courses/?search='+category+'&fields[course]=@all&page_size=15';
   let h= new Headers();
   h.append("Accept","application/json, text/plain, */*");
@@ -53,7 +53,7 @@ function get(category,id){
   .then(courses => {
     coursesData = courses.results;
    // console.log(coursesData);
-    addCourses(coursesData);
+    addCourses();
   });
  
 }
@@ -72,11 +72,25 @@ function change_info(id){
     `
 }
 function addCourse(course){
-  let courses = document.querySelector('.courses');
-  let course_li = document.createElement('li');
+  if(num_courses%numOfCourses == 1 || numOfCourses == 1){
+    block_num++;
+    let cont = document.querySelector('.carousel-inner');
+    let nw_item = document.createElement('div');
+    nw_item.classList.add('carousel-item');
+    if(block_num==1){
+      nw_item.classList.add('active');
+    }
+    let inside = document.createElement('div');
+    inside.classList.add('d-flex');
+    inside.classList.add('blk-'+block_num);
+    nw_item.appendChild(inside);
+    cont.appendChild(nw_item);
+  }
+  let courses = document.querySelector('.blk-'+block_num);
+  console.log(numOfCourses);
+  let course_li = document.createElement('div');
   course_li.classList.add('course-li');
   course_li.classList.add('li-'+num_courses);
-  course_li.classList.add("carousel-inner");
   let stars=``;
   let full = `<span class='fa fa-star' style = 'color:#E59819'></span>`;
   let half = `<span class='fa fa-star-half-o' style = 'color:#E59819'></span>`;
@@ -115,22 +129,20 @@ function addCourse(course){
     </figure> 
   </a>`;
   course_li.innerHTML = html;
-  if(num_courses>5){
-    course_li.classList.add('d-none');
-  }
   courses.appendChild(course_li);
-  num_courses++;
 }
-
-function addCourses(coursesData){
+function clear(className){
+  num_courses = 0;
+  block_num = 0;
+  let x = document.querySelector(className);
+  x.innerHTML=``;
+}
+function addCourses(){
+  clear(".carousel-inner");
   coursesData.forEach(course => {
+      num_courses++;
       addCourse(course);
   });
-  let courses = document.querySelector('.courses');
-  let nextBtn = document.createElement('span');
-  nextBtn.innerHTML = `<button class="next-btn fa-solid fa-circle-chevron-right fa-2xl border-0" onclick="goNext()"></button>`
-  courses.append(nextBtn);
-  rightCourse=Math.min(5,num_courses);
 }
 function search(){
   var input, filter, ul, li, i, txtValue;
@@ -149,26 +161,50 @@ function search(){
     }
   }
 }
-
-
-function goNext(){
-  if(rightCourse+1>num_courses || num_courses<5)
-    return;
-  let nextCourse = document.querySelector('.li-'+(rightCourse+1));
-  nextCourse.classList.remove('d-none');
-  let hiddenCourse = document.querySelector('.li-'+leftCourse);
-  hiddenCourse.classList.add('d-none');
-  rightCourse++;
-  leftCourse++;
+function changeNumOfCoursesh(x) {
+  if(x.matches){
+    numOfCourses = 5;
+    addCourses();
+  }
 }
-function goBack(){
-  if(leftCourse-1==0 || num_courses<5)
-    return;
-  let prevCourse = document.querySelector('.li-'+(leftCourse-1));
-  prevCourse.classList.remove('d-none');
-  let hiddenCourse = document.querySelector('.li-'+rightCourse);
-  hiddenCourse.classList.add('d-none');
-  rightCourse--;
-  leftCourse--;
+function changeNumOfCoursesx(x) {
+  if(x.matches){
+    numOfCourses = 4;
+    addCourses();
+  }
 }
+function changeNumOfCoursesy(x) {
+  if(x.matches){
+    numOfCourses = 3;
+    addCourses();
+  }
+}
+function changeNumOfCoursesw(x) {
+  if(x.matches){
+    numOfCourses = 2;
+    addCourses();
+  }
+}
+function changeNumOfCoursesz(x) {
+  if(x.matches){
+    numOfCourses = 1;
+    addCourses();
+  }
+}
+const h = window.matchMedia("(min-width:1401px)");
+const x = window.matchMedia("(min-width:1151px) and (max-width: 1400px)");
+const y = window.matchMedia("(min-width:901px) and (max-width: 1150px)");
+const w = window.matchMedia("(min-width:701px) and (max-width: 900px)");
+const z = window.matchMedia("(max-width: 700px)");
+changeNumOfCoursesx(x); // Call listener function at run time
+changeNumOfCoursesh(h); // Call listener function at run time
+changeNumOfCoursesy(y); // Call listener function at run time
+changeNumOfCoursesw(w); // Call listener function at run time
+changeNumOfCoursesz(z); // Call listener function at run time
+
+x.addListener(changeNumOfCoursesx); // Attach listener function on state changes
+y.addListener(changeNumOfCoursesy); // Attach listener function on state changes
+w.addListener(changeNumOfCoursesw); // Attach listener function on state changes
+z.addListener(changeNumOfCoursesz); // Attach listener function on state changes
+h.addListener(changeNumOfCoursesh); // Attach listener function on state changes
 
